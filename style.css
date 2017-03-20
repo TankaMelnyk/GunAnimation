@@ -1,0 +1,176 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+html,
+body{
+	height: 100%;
+	min-width: 750px;
+}
+body {
+	background-color: #141b23;
+	background: #141b23 url("http://res.cloudinary.com/diwzsryj3/image/upload/v1477038768/sky_utzmhq.jpg") no-repeat;
+	background-size: 1920px 950px;
+}
+
+#field{
+	background: url("http://res.cloudinary.com/diwzsryj3/image/upload/c_scale,w_1920/v1477038844/grass_nhwj27.png") no-repeat;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 400px;
+	width: 100%;
+}
+
+@keyframes gun_shoting {
+	from{
+		left: 290px;
+		bottom: 85px;
+	}
+	to{
+		left: 300px;
+		bottom: 100px;
+	}
+}
+
+#field #gun {
+	background-image: url("http://res.cloudinary.com/diwzsryj3/image/upload/v1476891748/gun_wqyjwa.png");
+	position: absolute;
+	left: 300px;
+	bottom: 100px;
+	width: 170px;
+	height: 120px;
+	z-index: 10;
+	animation-name: gun_shoting;
+	animation-duration: .5s;
+	animation-delay: 1s;
+}
+
+@keyframes smoke {
+	from {
+		background-image: url("http://res.cloudinary.com/diwzsryj3/image/upload/v1476891767/bum_1_vrzyvy.png");	
+	}
+	33% {
+		background-image: url("http://res.cloudinary.com/diwzsryj3/image/upload/v1476891772/bum_2_zf5lua.png");
+	}
+	66% {
+		background-image: url("http://res.cloudinary.com/diwzsryj3/image/upload/v1476891778/bum_3_ech0os.png");
+	}
+	to {
+		background-image: none;
+	}
+}
+
+#wrapper_bum {
+	background-image: none;
+	position: absolute;
+	left: 360px;
+	bottom: 172px;
+	width: 216px;
+	height: 137px;
+	z-index: 9;
+	animation-name: smoke;
+	animation-duration: .7s;
+	animation-delay: 1s;
+}
+
+@keyframes ammunition_flown {
+	from{
+		left: 410px;
+		bottom: 172px;
+		transform: scale(1);
+	}
+	25%{
+		left: 650px;
+		bottom: 300px;
+		transform: scale(0.9);
+	}
+	50%{
+		left: 770px;
+		bottom: 335px;
+		transform: scale(0.8);
+	}
+	75%{
+		left: 890px;
+		bottom: 325px;
+		transform: scale(0.7);
+	}
+	to{
+		left: 1120px;
+		bottom: 285px;
+		transform: scale(0.6);
+	}
+}
+
+#ammunition {
+	background-image: url("http://res.cloudinary.com/diwzsryj3/image/upload/v1476891758/ammunition_nozrmp.png");
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 410px;
+	bottom: 172px;
+	width: 45px;
+	height: 45px;
+	z-index: 7;
+	animation: ammunition_flown 1.2s linear;
+	animation-delay: 1s;
+}
+
+@keyframes animation_explosion{
+	from{
+		background-image: url("http://res.cloudinary.com/diwzsryj3/image/upload/v1476891792/explosion_1_mtx5um.png");
+	}
+	17%{
+		background-image: url("http://res.cloudinary.com/diwzsryj3/image/upload/v1476891796/explosion_2_dn5f7l.png");
+	}
+	33%{
+		background-image: url("http://res.cloudinary.com/diwzsryj3/image/upload/v1476891803/explosion_3_nrbisv.png");
+	}
+	50%{
+		background-image: url("http://res.cloudinary.com/diwzsryj3/image/upload/v1476891814/explosion_4_vgjhjd.png");
+	}
+	67%{
+		background-image: url("http://res.cloudinary.com/diwzsryj3/image/upload/v1476891819/explosion_5_usqtwp.png");
+	}
+	84%{
+		background-image: url("http://res.cloudinary.com/diwzsryj3/image/upload/v1476891825/explosion_6_eohkum.png");
+	}
+	to{
+		background-image: none;
+	}
+}
+
+#explosion {
+	background-image: none;
+	position: absolute;
+	left: 1100px;
+	bottom: 300px;
+	width: 165px;
+	height: 127px;
+	z-index: 9;
+	animation-name: animation_explosion;
+	animation-duration: 1s;
+	animation-delay: 2.3s;
+}
+
+@keyframes disappeared_house {
+	from{
+		background-image: url("http://res.cloudinary.com/diwzsryj3/image/upload/c_scale,w_75/v1476962242/house_2_uuj6eo.png");
+	}
+	to{
+		background-image: none;
+	}
+}
+
+#house {
+	background-image: url("http://res.cloudinary.com/diwzsryj3/image/upload/c_scale,w_75/v1476962242/house_2_uuj6eo.png");
+	position: absolute;
+	left: 1135px;
+	bottom: 280px;
+	width: 75px;
+	height: 75px;
+	z-index: 6;
+	animation-name: disappeared_house;
+	animation-duration: .1s;
+	animation-delay: 2.2s;
+	animation-fill-mode: forwards;
+}
